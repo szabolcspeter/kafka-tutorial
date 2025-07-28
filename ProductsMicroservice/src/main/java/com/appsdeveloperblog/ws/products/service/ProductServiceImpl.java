@@ -1,5 +1,6 @@
 package com.appsdeveloperblog.ws.products.service;
 
+import com.appsdeveloperblog.ws.core.ProductCreatedEvent;
 import com.appsdeveloperblog.ws.products.rest.CreateProductRestModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,7 +38,7 @@ public class ProductServiceImpl implements ProductService {
         LOGGER.info("Before publishing a ProductCreatedEvent");
 
         SendResult<String, ProductCreatedEvent> result =
-                kafkaTemplate.send("topic2", productId, productCreatedEvent).get();
+                kafkaTemplate.send("product-created-events-topic", productId, productCreatedEvent).get();
 
         LOGGER.info("Partition: " + result.getRecordMetadata().partition());
         LOGGER.info("Topic: " + result.getRecordMetadata().topic());
