@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.support.serializer.JsonDeserializer;
@@ -33,5 +34,13 @@ public class KafkaConsumerConfiguration {
                 environment.getProperty("spring.kafka.consumer.group-id"));
 
         return new DefaultKafkaConsumerFactory<>(config);
+    }
+
+    @Bean
+    ConcurrentKafkaListenerContainerFactory<String, Object> kafkaListenerContainerFactory(
+            ConsumerFactory<String, Object> consumerFactory) {
+        ConcurrentKafkaListenerContainerFactory<String, Object> factory = new ConcurrentKafkaListenerContainerFactory<>();
+
+        return factory;
     }
 }
