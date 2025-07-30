@@ -1,5 +1,6 @@
 package com.appsdeveloperblog.ws.EmailNotificationMicroservice.handler;
 
+import com.appsdeveloperblog.ws.EmailNotificationMicroservice.error.NotRetryableException;
 import com.appsdeveloperblog.ws.core.ProductCreatedEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +16,8 @@ public class ProductCreatedEventHandler {
 
     @KafkaHandler
     public void handle(ProductCreatedEvent productCreatedEvent) {
+
+        if (true) throw new NotRetryableException("An error took place. No need to consume this message again.");
         LOGGER.info("Received a new event: " + productCreatedEvent.getTitle());
     }
 }
