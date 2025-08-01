@@ -40,7 +40,7 @@ public class KafkaConsumerConfiguration {
         config.put(JsonDeserializer.TRUSTED_PACKAGES,
                 environment.getProperty("spring.kafka.consumer.properties.spring.json.trusted.packages"));
         config.put(ConsumerConfig.GROUP_ID_CONFIG,
-                environment.getProperty("spring.kafka.consumer.group-id"));
+                environment.getProperty("consumer.group-id"));
 
         return new DefaultKafkaConsumerFactory<>(config);
     }
