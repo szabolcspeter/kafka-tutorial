@@ -4,6 +4,11 @@
     <file url="file://$PROJECT_DIR$/EmailNotificationMicroservice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ProductsMicroservice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kafka-transactions-DepositService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kafka-transactions-TransfersService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kafka-transactions-WithdrawalService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kafka-transactions-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kafka-transactions-mockservice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mockservice/src/main/java" charset="UTF-8" />
   </component>
 </project>
